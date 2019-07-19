@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package camera;
+
+message image{
+    bytes content = 1;
+}
+
+message SubscribeRequest{}
+
+service imageService{
+    rpc getImage (SubscribeRequest) returns (image){}
+}
+
+//
