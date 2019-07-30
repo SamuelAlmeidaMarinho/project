@@ -12,4 +12,4 @@ service imageService{
     rpc getImage (SubscribeRequest) returns (image){}
 }
 
-//
+//protoc -I=(local do arquivo) --python_out=(locla de saida) (nome do arquivo .proto)
