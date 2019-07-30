@@ -3,13 +3,15 @@ syntax = "proto3";
 package camera;
 
 message image{
-    bytes content = 1;
+    int32 width = 1;
+    int32 height = 2;
+    bytes imageData = 3;
 }
 
-message SubscribeRequest{}
+message subscribeRequest{}
 
-service imageService{
-    rpc getImage (SubscribeRequest) returns (image){}
+service imageStream{
+    rpc getImage (subscribeRequest) returns (image){}
 }
 
 //protoc -I=(local do arquivo) --python_out=(locla de saida) (nome do arquivo .proto)
